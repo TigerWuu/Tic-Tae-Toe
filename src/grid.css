@@ -1,0 +1,16 @@
+.grid{
+  background-color: rgba(14, 238, 51, 0.425);
+  border-radius: 1rem;
+  border: rgb(12, 155, 12) solid 3px;
+}
+
+.grid table{
+  width : 20rem;
+  height : 20rem;
+  margin : 0 auto;
+  background-color:rgb(92, 234, 253);
+  text-align: center;
+  border-collapse :separate;
+  border : 2px solid blue;
+  
+}

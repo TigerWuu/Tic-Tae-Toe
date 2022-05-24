@@ -1,0 +1,11 @@
+.banner{
+    background-color: rgba(236, 236, 187, 0.904);
+    border-radius: 1rem;
+    border: yellow solid 3px;
+}
+
+.banner .mark{
+    border: red solid 3px;
+    border-radius: 1rem;
+
+}
