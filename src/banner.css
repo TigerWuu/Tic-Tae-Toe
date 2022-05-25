@@ -4,8 +4,18 @@
     border: yellow solid 3px;
 }
 
-.banner .mark{
+.banner .turnMark{
     border: red solid 3px;
     border-radius: 1rem;
 
 }
+
+.banner h3{
+    margin-bottom: 0;
+}
+
+/*
+.banner span{
+    ;
+}
+*/

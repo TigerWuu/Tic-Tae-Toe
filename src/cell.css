@@ -1,6 +1,9 @@
 .cell{
   margin: 0;
   padding: 0;
+  width: 33%;
+  height: 33%;
   border:2px solid blue;
+  font-size: 2rem;
   text-align: center;
 }

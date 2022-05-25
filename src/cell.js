@@ -5,7 +5,8 @@ export default class Cell extends Component{
     constructor(root){
         super(root);
         root.addEventListener("click", this.handleDomClick.bind(this)); // bind(this) ??? Ans: if we don't add bind this, "this" here is represent the "root", namley "td".
-        console.log(root);
+        this.mark = "";
+        // console.log(root);
     }
 
     static getRoot(){
@@ -14,15 +15,21 @@ export default class Cell extends Component{
 
     handleDomClick(e){
         console.log(this.pub);
-        this.pub("cellClick",this.set.bind(this));
+        this.pub("cellClick",this.setMark.bind(this), this.mark);
     }
 
-    set(mark){
+    getMark(){
+        return this.mark;
+    }
+
+    setMark(mark){
         this.root.textContent = mark;
+        this.mark = mark;
     }
  
     reset(){
-
+        this.root.textContent = "";
+        this.mark = "";
     }
 
 }

@@ -2,6 +2,7 @@
 import Component from "./component.js";
 import Banner from "./banner.js";
 import Grid from "./grid.js";
+import Reset from "./reset.js";
 
 class Main extends Component{
     constructor(root){
@@ -12,6 +13,9 @@ class Main extends Component{
 
         this.grid = new Grid(root.querySelector(Grid.getRoot()), this.firstTurn);
         this.grid.reg("gridClick", this.handleGridClick.bind(this));
+
+        this.reset = new Reset(root.querySelector(Reset.getRoot()));
+        this.reset.reg("resetClick", this.handleResetClick.bind(this));
     }
 
     static getRoot(){
@@ -22,6 +26,11 @@ class Main extends Component{
         console.log(turn);
         this.banner.setTurn(turn);
         this.banner.displayTurn();
+    }
+
+    handleResetClick(){
+        this.banner.reset();
+        this.grid.reset();
     }
 }
 
