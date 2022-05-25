@@ -20,6 +20,10 @@ export default class Banner extends Component{
         this.turn = turn;
     }
 
+    setWinner(winner){
+        window.alert(winner);
+    }
+
     displayTurn(){
         if (this.getTurn() === "X"){
             this.xBox.classList.add("turnMark");

@@ -13,6 +13,7 @@ class Main extends Component{
 
         this.grid = new Grid(root.querySelector(Grid.getRoot()), this.firstTurn);
         this.grid.reg("gridClick", this.handleGridClick.bind(this));
+        this.grid.reg("gameFinished", this.handleGameFinished.bind(this));
 
         this.reset = new Reset(root.querySelector(Reset.getRoot()));
         this.reset.reg("resetClick", this.handleResetClick.bind(this));
@@ -23,9 +24,14 @@ class Main extends Component{
     }
     
     handleGridClick(turn){
-        console.log(turn);
         this.banner.setTurn(turn);
         this.banner.displayTurn();
+    }
+
+    handleGameFinished(winner){
+        this.banner.setWinner(winner);
+        this.banner.reset();
+        this.grid.reset();
     }
 
     handleResetClick(){
