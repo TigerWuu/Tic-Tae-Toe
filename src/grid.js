@@ -7,14 +7,16 @@ export default class Grid extends Component{
         this.turn = firstTurn;
         this.winner = "";
         this.cells = [[],[],[]];
-        var els = root.querySelectorAll(Cell.getRoot());
+        this.winBanner = this.root.querySelector("div");
+        
+        var els = this.root.querySelectorAll(Cell.getRoot());
         for (var index=0; index< els.length; index++){
             var row = Math.floor(index/3);
             var col = index%3;
+
             var cell = new Cell(els[index]);
             cell.reg("cellClick", this.handleCellClick.bind(this));
             this.cells[row].push(cell);
-            console.log(this.cells);
         }
         this.rows = row+1;
         this.cols = col+1;
@@ -114,6 +116,14 @@ export default class Grid extends Component{
             setMark(this.getTurn());
             if(this.isGameFinished()){
                 this.pub("gameFinished", this.getWinner());                
+                this.winBanner.classList.add("winBanner");
+                if (this.getWinner() === "It is a tie" ){
+                    this.winBanner.textContent = this.getWinner();
+                }
+                else{
+                    this.winBanner.textContent = this.getWinner() + " Wins!!!";
+                }
+                setTimeout(this.removeWinBanner.bind(this),3000);
             }
             else{
                 this.switchTurn();
@@ -122,12 +132,18 @@ export default class Grid extends Component{
         }
     }
 
+    removeWinBanner(){
+        this.winBanner.classList.remove("winBanner");
+        this.winBanner.textContent = "";
+    }
+
     reset(){
         for(var i=0; i < this.cells.length; i++){
             for(var j=0; j< this.cells[0].length; j++){
                 this.cells[i][j].reset();
             }
         }
+        this.removeWinBanner();
     }
 
 

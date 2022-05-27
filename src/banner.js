@@ -6,6 +6,14 @@ export default class Banner extends Component{
         this.turn = firstTurn;
         this.xBox = this.root.querySelector(".X");
         this.oBox = this.root.querySelector(".O");
+        this.score = {
+            "X" : this.root.querySelector("#scoreX"),    
+            "O" : this.root.querySelector("#scoreO"),    
+        }
+        this.winTimes = {
+            "X" : 0,
+            "O" : 0,
+        }
     }
 
     static getRoot(){
@@ -21,9 +29,11 @@ export default class Banner extends Component{
     }
 
     setWinner(winner){
-        window.alert(winner);
+        if (winner === "X" || winner === "O"){
+            this.winTimes[winner]+=1;
+            this.score[winner].textContent = this.winTimes[winner];
+        }
     }
-
     displayTurn(){
         if (this.getTurn() === "X"){
             this.xBox.classList.add("turnMark");
@@ -41,5 +51,9 @@ export default class Banner extends Component{
 
     reset(){
         this.displayTurn();
+        this.winTimes["X"] = 0;
+        this.winTimes["O"] = 0;
+        this.score["X"].textContent = 0;
+        this.score["O"].textContent = 0;
     }
 }

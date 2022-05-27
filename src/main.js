@@ -1,4 +1,3 @@
-
 import Component from "./component.js";
 import Banner from "./banner.js";
 import Grid from "./grid.js";
@@ -30,7 +29,7 @@ class Main extends Component{
 
     handleGameFinished(winner){
         this.banner.setWinner(winner);
-        this.banner.reset();
+        // this.banner.reset();
         this.grid.reset();
     }
 

@@ -6,4 +6,8 @@
   border:2px solid blue;
   font-size: 2rem;
   text-align: center;
+  /*
+  transition-delay: 1s;
+  transition-duration: 1s;
+  */
 }

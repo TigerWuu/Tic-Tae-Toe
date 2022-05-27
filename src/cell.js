@@ -13,7 +13,6 @@ export default class Cell extends Component{
     }
 
     handleDomClick(e){
-        console.log(this.pub);
         this.pub("cellClick",this.setMark.bind(this), this.mark);
     }
 
