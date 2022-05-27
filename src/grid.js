@@ -1,6 +1,8 @@
 import Component from "./component.js"
 import Cell from "./cell.js"
 
+import "./grid.css";
+
 export default class Grid extends Component{
     constructor(root, firstTurn){
         super(root);

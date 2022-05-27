@@ -1,5 +1,6 @@
 import Component from "./component.js";
 
+import "./reset.css";
 
 export default class Reset extends Component{
     constructor(root){

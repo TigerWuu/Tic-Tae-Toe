@@ -1,5 +1,7 @@
 import Component from "./component.js"
 
+import "./banner.css";
+
 export default class Banner extends Component{
     constructor(root, firstTurn){
         super(root)

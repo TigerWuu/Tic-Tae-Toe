@@ -2,6 +2,9 @@ import Component from "./component.js";
 import Banner from "./banner.js";
 import Grid from "./grid.js";
 import Reset from "./reset.js";
+import "./title.js";
+
+import "./main.css";
 
 class Main extends Component{
     constructor(root){

@@ -1,5 +1,7 @@
 import Component from "./component.js";
 
+import "./cell.css";
+
 export default class Cell extends Component{
     constructor(root){
         super(root);
