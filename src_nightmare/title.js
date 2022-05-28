@@ -20,8 +20,7 @@ anime.timeline({loop: true})
     duration: 700,
     offset: '-=875',
     delay: (el, i, l) => 80 * (l - i)
-  })
-  .add({
+  }).add({
     targets: '.title',
     opacity: 0,
     duration: 1000,
